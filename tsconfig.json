@@ -30,6 +30,6 @@
     ".next/types/**/*.ts",
     "seed/users.ts",
     "scripts/seed.js"
-  ],
+, "scripts/seed-database/seed/seed-favorites.mjs", "scripts/seed-database/seed/seed-activities.mjs", "scripts/seed-database/seed/seed-watch-later.mjs"  ],
   "exclude": ["node_modules"]
 }
