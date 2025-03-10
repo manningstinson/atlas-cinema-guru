@@ -1,0 +1,21 @@
+{
+  "name": "seed",
+  "version": "1.0.0",
+  "description": "Database seeding scripts",
+  "scripts": {
+    "seed-favorites": "NODE_OPTIONS=--experimental-specifier-resolution=node ts-node --esm seed-favorites.ts",
+    "seed-watch-later": "NODE_OPTIONS=--experimental-specifier-resolution=node ts-node --esm seed-watch-later.ts",
+    "seed-activities": "NODE_OPTIONS=--experimental-specifier-resolution=node ts-node --esm seed-activities.ts",
+    "seed-all": "npm run seed-favorites && npm run seed-watch-later && npm run seed-activities"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "pg": "^8.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/pg": "^8.6.6",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  }
+}
