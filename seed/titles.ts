@@ -1,4 +1,4 @@
-import { Title } from "@/lib/definitions";
+import { Title } from "../lib/definitions";
 
 // Movie titles to load into database
 // Do not reference directly. Data should be read from database

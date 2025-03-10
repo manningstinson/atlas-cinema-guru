@@ -1,0 +1,11 @@
+{
+  "name": "seed-scripts",
+  "type": "module",
+  "scripts": {
+    "seed-titles": "npx tsc -p tsconfig.seed.json && node ../seed-dist/seed/seed-titles.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "pg": "^8.11.0"
+  }
+}
