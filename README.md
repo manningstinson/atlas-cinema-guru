@@ -1,7 +1,4 @@
- 
-# Cinema Guru
-![cinema-guru-pug](https://github.com/user-attachments/assets/53214950-0b7c-4d4b-9389-acede0fb8063)
-
+# Cinama Guru
 ## 🔗 **[Live Site](https://atlas-cinema-guru-beta.vercel.app/)**
 
 **Cinema Guru** is a full-stack movie tracking application built with Next.js, Tailwind CSS, and TypeScript. This application was developed as part of a school project to practice building a feature-rich, interactive movie database while integrating authentication, filtering, and dynamic UI components.
