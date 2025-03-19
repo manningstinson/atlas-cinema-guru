@@ -126,7 +126,7 @@ const MovieCard: React.FC<MovieCardProps> = ({
       {/* Movie Details */}
       <div
         className="absolute bottom-0 left-0 w-full bg-navy p-4
-        md:h-0 md:opacity-0 md:group-hover:h-[25%] md:group-hover:opacity-100 transition-all duration-500 ease-in-out"
+        md:h-0 md:opacity-0 md:group-hover:h-[28%] md:group-hover:opacity-100 transition-all duration-500 ease-in-out"
         aria-hidden="true"
       >
         <h3
