@@ -90,7 +90,7 @@ const DashboardSidebar = () => {
         <li role="listitem">
           <Link
             href="/"
-            className="flex items-center justify-center focus:ring-2 focus:ring-blue-300 rounded-md py-2 px-1"
+            className={`flex items-center ${isExpanded ? '' : 'justify-center'} focus:ring-2 focus:ring-blue-300 rounded-md py-2 ${isExpanded ? 'px-4' : 'px-1'}`}
             aria-label="Go to Home"
             aria-current={currentPath === "/" ? "page" : undefined}
           >
@@ -102,7 +102,7 @@ const DashboardSidebar = () => {
         <li role="listitem">
           <Link
             href="/favorites"
-            className="flex items-center justify-center focus:ring-2 focus:ring-blue-300 rounded-md py-2 px-1"
+            className={`flex items-center ${isExpanded ? '' : 'justify-center'} focus:ring-2 focus:ring-blue-300 rounded-md py-2 ${isExpanded ? 'px-4' : 'px-1'}`}
             aria-label="Go to Favorites"
             aria-current={currentPath === "/favorites" ? "page" : undefined}
           >
@@ -114,7 +114,7 @@ const DashboardSidebar = () => {
         <li role="listitem">
           <Link
             href="/watch-later"
-            className="flex items-center justify-center focus:ring-2 focus:ring-blue-300 rounded-md py-2 px-1"
+            className={`flex items-center ${isExpanded ? '' : 'justify-center'} focus:ring-2 focus:ring-blue-300 rounded-md py-2 ${isExpanded ? 'px-4' : 'px-1'}`}
             aria-label="Go to Watch Later"
             aria-current={currentPath === "/watch-later" ? "page" : undefined}
           >
