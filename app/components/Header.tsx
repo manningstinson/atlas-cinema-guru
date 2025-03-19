@@ -6,7 +6,7 @@ const Header = async () => {
   const session = await auth();
 
   return (
-    <header className="bg-mintyTeal h-[8dvh] md:h-[8dvh] w-full flex items-center justify-between px-4 md:px-5 text-midnightBlue shadow-md">
+    <header className="bg-mintyTeal h-20 md:h-16 w-full flex items-center justify-between px-4 md:px-5 text-midnightBlue shadow-md">
       {/* Left Section: Logo & Title */}
       <div className="flex items-center space-x-2">
         <Image
