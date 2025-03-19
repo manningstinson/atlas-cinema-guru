@@ -1,4 +1,3 @@
-<div align="center">
  
 # Cinema Guru
 ![cinema-guru-pug](https://github.com/user-attachments/assets/53214950-0b7c-4d4b-9389-acede0fb8063)
