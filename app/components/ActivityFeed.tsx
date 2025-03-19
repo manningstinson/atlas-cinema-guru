@@ -1,5 +1,4 @@
 "use client";
-
 import { useState, useEffect } from "react";
 
 interface Activity {
@@ -35,9 +34,45 @@ const ActivityFeed: React.FC<ActivityFeedProps> = ({ refreshTrigger }) => {
         setLoading(false);
       }
     };
-
     fetchActivities();
   }, [refreshTrigger]);
+
+  // Helper function to format timestamp in a user-friendly way
+  const formatTimestamp = (timestamp: string) => {
+    const activityDate = new Date(timestamp);
+    const now = new Date();
+    
+    // If it's today, show "Today at HH:MM"
+    if (activityDate.toDateString() === now.toDateString()) {
+      return `Today at ${activityDate.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      })}`;
+    }
+    
+    // If it's yesterday, show "Yesterday at HH:MM"
+    const yesterday = new Date(now);
+    yesterday.setDate(now.getDate() - 1);
+    if (activityDate.toDateString() === yesterday.toDateString()) {
+      return `Yesterday at ${activityDate.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+      })}`;
+    }
+    
+    // Otherwise show MM/DD/YYYY, HH:MM
+    return activityDate.toLocaleDateString('en-US', {
+      month: '2-digit',
+      day: '2-digit',
+      year: 'numeric'
+    }) + ', ' + activityDate.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true
+    });
+  };
 
   return (
     <section
@@ -51,7 +86,6 @@ const ActivityFeed: React.FC<ActivityFeedProps> = ({ refreshTrigger }) => {
       >
         Latest Activities
       </h2>
-
       {loading ? (
         <p
           className="text-midnightBlue text-md font-medium px-2"
@@ -68,38 +102,30 @@ const ActivityFeed: React.FC<ActivityFeedProps> = ({ refreshTrigger }) => {
           {activities.map((activity) => (
             <li
               key={activity.id}
-              className="text-midnightBlue text-sm focus:outline-none focus:ring-2 focus:ring-midnightBlue-300"
+              className="text-midnightBlue text-sm focus:outline-none focus:ring-2 focus:ring-midnightBlue-300 transition-opacity"
               tabIndex={0}
             >
               <time
                 dateTime={activity.timestamp}
-                className="block text-sm font-medium text-gray-900"
+                className="block text-sm font-medium text-gray-700"
               >
-                {new Date(activity.timestamp).toLocaleDateString("en-US", {
-                  month: "2-digit",
-                  day: "2-digit",
-                  year: "numeric",
-                })}
-                {", "}
-                {new Date(activity.timestamp).toLocaleTimeString("en-US", {
-                  hour: "2-digit",
-                  minute: "2-digit",
-                  second: "2-digit",
-                  hour12: true,
-                })}
+                {formatTimestamp(activity.timestamp)}
               </time>
               <p className="text-md text-gray-800 mt-1">
                 {activity.activity === "FAVORITED" ? (
                   <>
+                    <span className="text-amber-600 mr-1">★</span>
                     Favorited{" "}
                     <span className="font-bold">{activity.title}</span>
                   </>
                 ) : activity.activity === "REMOVED" ? (
                   <>
+                    <span className="text-red-600 mr-1">✕</span>
                     Removed <span className="font-bold">{activity.title}</span>
                   </>
                 ) : activity.activity === "WATCH_LATER" ? (
                   <>
+                    <span className="text-blue-600 mr-1">⏰</span>
                     Added <span className="font-bold">{activity.title}</span> to
                     Watch Later
                   </>
