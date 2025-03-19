@@ -86,7 +86,7 @@ const DashboardSidebar = () => {
       aria-expanded={isExpanded}
     >
       {/* Sidebar Links */}
-      <ul className="flex flex-col space-y-6 px-5 pt-5" role="list">
+      <ul className="flex flex-col space-y-6 px-2 pt-5" role="list">
         <li role="listitem">
           <Link
             href="/"
