@@ -86,11 +86,11 @@ const DashboardSidebar = () => {
       aria-expanded={isExpanded}
     >
       {/* Sidebar Links */}
-      <ul className="flex flex-col space-y-6 px-1 pt-5" role="list">
+      <ul className="flex flex-col space-y-6 pl-1 pr-0 pt-5" role="list">
         <li role="listitem">
           <Link
             href="/"
-            className="flex items-center focus:ring-2 focus:ring-blue-300 rounded-md p-2"
+            className="flex items-center justify-center focus:ring-2 focus:ring-blue-300 rounded-md py-2 px-1"
             aria-label="Go to Home"
             aria-current={currentPath === "/" ? "page" : undefined}
           >
@@ -102,7 +102,7 @@ const DashboardSidebar = () => {
         <li role="listitem">
           <Link
             href="/favorites"
-            className="flex items-center focus:ring-2 focus:ring-blue-300 rounded-md p-2"
+            className="flex items-center justify-center focus:ring-2 focus:ring-blue-300 rounded-md py-2 px-1"
             aria-label="Go to Favorites"
             aria-current={currentPath === "/favorites" ? "page" : undefined}
           >
@@ -114,7 +114,7 @@ const DashboardSidebar = () => {
         <li role="listitem">
           <Link
             href="/watch-later"
-            className="flex items-center focus:ring-2 focus:ring-blue-300 rounded-md p-2"
+            className="flex items-center justify-center focus:ring-2 focus:ring-blue-300 rounded-md py-2 px-1"
             aria-label="Go to Watch Later"
             aria-current={currentPath === "/watch-later" ? "page" : undefined}
           >
