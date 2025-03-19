@@ -78,7 +78,7 @@ const DashboardSidebar = () => {
     /** DESKTOP SIDEBAR */
     <aside
       ref={sidebarRef}
-      className="bg-teal h-full min-h-screen flex flex-col transition-all duration-300 w-20 hover:w-64 overflow-y-auto shadow-md"
+      className="bg-teal h-full min-h-screen flex flex-col transition-all duration-300 w-16 hover:w-64 overflow-y-auto shadow-md"
       onMouseEnter={() => setIsExpanded(true)}
       onMouseLeave={() => setIsExpanded(false)}
       role="navigation"
@@ -86,7 +86,7 @@ const DashboardSidebar = () => {
       aria-expanded={isExpanded}
     >
       {/* Sidebar Links */}
-      <ul className="flex flex-col space-y-6 px-2 pt-5" role="list">
+      <ul className="flex flex-col space-y-6 px-1 pt-5" role="list">
         <li role="listitem">
           <Link
             href="/"
